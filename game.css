@@ -1,0 +1,52 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrolling issues */
+    height: 100%; /* Make sure the body takes full height */
+    background: black; /* Optional: Change to match your game */
+  }
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* Make the video take up the full width of the screen */
+    height: 100%; /* Make the video take up the full height of the screen */
+  }
+  
+  /* Set the position and size for the container and frame */
+  #gameContainer {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); /* Center horizontally */
+      bottom: 0; /* Align to the bottom */
+      width: 80vw; /* Example size, adjust based on frame image size */
+      height: auto;
+  }
+  
+  #gameFrame {
+      position: absolute;
+      left: 41%;
+      transform: translateX(-50%); /* Center horizontally */
+      bottom: 0; /* Align to the bottom */
+      width: 65vw; /* Same as game container */
+      height: 80vh;
+  }
+  
+  #gameFrame img {
+      width: 100%; /* Ensure the image fits the parent frame size */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+ /* Center the #gameGuide image */
+#gameGuide {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 85%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to truly center */
+}
+
+#gameGuide img {
+    width: 25vw;
+    height: auto; /* Maintain aspect ratio */
+}

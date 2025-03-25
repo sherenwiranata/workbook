@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* Make the video take up the full width of the screen */
+    height: 100%; /* Make the video take up the full height of the screen */
+    overflow: hidden;
+    z-index: -1; /* Place the video behind other content */
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: cover; /* Ensure the video covers the entire screen */
+  }
+  
+  .gameName {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the image */
+    width: 70vw; /* Adjust width of the image to make it smaller (25% of viewport width) */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure the image is above the video */
+}
+  
+    .gameName img {
+    width: 100%; /* Make the image take up the full width of the .gameName container */
+    height: auto; /* Maintain aspect ratio */
+    filter: drop-shadow(5px 5px 50px rgba(0, 0, 0, 0.7)); /* Adds a soft shadow */
+}
+@keyframes wobble {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    25% { transform: translate(-50%, -50%) rotate(3deg); }
+    50% { transform: translate(-50%, -50%) rotate(-3deg); }
+    75% { transform: translate(-50%, -50%) rotate(3deg); }
+    100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+
+.wobble {
+    animation: wobble 0.3s ease-in-out;
+}
+.startbutton {
+    position: absolute;
+    top: 80%; /* Adjust this to position it below the game name */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%; /* Adjust width relative to .gameName */
+    height: 1%; /* Make it 75% of the game title height */
+    z-index: 2; /* Ensure it's above other elements */
+}
+
+.startbutton img {
+    width: 100%; /* Make the button image scale properly */
+    height: auto;
+}
+/* remember to research first whether this is common use or not */
+@keyframes colorFlash { 
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.startbutton:hover {
+    animation: colorFlash 1s infinite;
+
+}
+  button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1; /* Keep the button on top of the video and image */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
